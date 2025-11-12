@@ -50,7 +50,7 @@ All colors MUST be HSL.
     --glow-secondary: 0 0 30px hsl(15 90% 65% / 0.5);
     --glow-accent: 0 0 30px hsl(140 65% 55% / 0.5);
     --shadow-vibrant: 0 8px 32px hsl(180 70% 50% / 0.15);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -104,5 +104,9 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  html {
+    scroll-behavior: smooth;
   }
 }
