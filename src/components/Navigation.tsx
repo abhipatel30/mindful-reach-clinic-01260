@@ -59,7 +59,7 @@ const Navigation = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="font-medium text-foreground hover:text-primary transition-colors story-link text-lg"
+                className="text-foreground hover:text-secondary hover:underline  transition-colors story-link font-bold text-lg"
               >
                 {link.label}
               </button>
@@ -70,21 +70,21 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden text-2xl"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </Button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
+          <div className="md:hidden py-4 animate-fade-in bg-slate-900/80 backdrop-blur-sm shadow-xl rounded-b-md">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left py-2 px-4 text-foreground hover:bg-muted rounded-md transition-colors"
+                className="block w-full text-center py-2 px-4 text-white hover:bg-white/10 rounded-md transition-colors"
               >
                 {link.label}
               </button>
