@@ -17,11 +17,7 @@ const FAQ = () => {
     },
     {
       question: "Is my information confidential and secure?",
-      answer: "Absolutely. We use HIPAA-compliant, encrypted platforms for all communications. Your privacy is our top priority, and all therapists follow strict confidentiality guidelines as required by their professional licenses.",
-    },
-    {
-      question: "Do you accept insurance?",
-      answer: "We accept most major insurance plans. Our team can verify your coverage and help you understand your benefits. We also offer affordable self-pay options and sliding scale fees for those without insurance.",
+      answer: "Absolutely. We use DPDP-compliant, encrypted platforms for all communications. Your privacy is our top priority, and all therapists follow strict confidentiality guidelines as required by their professional licenses.",
     },
     {
       question: "What if I need to cancel or reschedule?",

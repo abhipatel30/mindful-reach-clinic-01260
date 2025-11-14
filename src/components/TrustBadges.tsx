@@ -3,31 +3,16 @@ import { Shield, Award, Lock, Users } from "lucide-react";
 const TrustBadges = () => {
   const badges = [
     {
-      icon: Shield,
-      title: "Licensed Therapists",
-      description: "All therapists are certified and licensed professionals",
-    },
-    {
       icon: Lock,
-      title: "HIPAA Compliant",
-      description: "Your privacy and data security are our top priority",
-    },
-    {
-      icon: Award,
-      title: "10+ Years Experience",
-      description: "Trusted by thousands of clients worldwide",
-    },
-    {
-      icon: Users,
-      title: "5000+ Sessions",
-      description: "Successfully completed therapy sessions",
+      title: "RCI + DPDP Compliant",
+      description: "Your privacy, trust, and emotional safety are at the core of every session",
     },
   ];
 
   return (
     <section className="py-12 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 max-w-md mx-auto gap-6">
           {badges.map((badge, index) => {
             const colors = ['primary', 'secondary', 'accent', 'primary'];
             const glowColors = [

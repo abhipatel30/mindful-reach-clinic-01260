@@ -16,12 +16,12 @@ const Services = () => {
     {
       icon: UserCheck,
       title: "Specialized Therapy",
-      description: "CBT, DBT, anxiety, depression, relationships, trauma, and more. Find the right specialist for you.",
+      description: "Every person's journey is unique, and so is the care they deserve. We offer specialized therapy tailored to your specific needs, drawing on evidence-based approaches.",
     },
     {
       icon: Shield,
       title: "Complete Privacy",
-      description: "HIPAA-compliant platform with end-to-end encryption. Your privacy and safety are our priority.",
+      description: "DPDP compliant platform with end-to-end encryption. Your privacy and safety are our priority.",
     },
   ];
 
