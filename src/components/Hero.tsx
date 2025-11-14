@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
-import logo from "@/assets/unveiled-echo-logo.jpg";
+
+import logo from "@/assets/unveiled-echo-logo.png";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -28,11 +29,11 @@ const Hero = () => {
       </div>
       
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in-up">
-        <img 
+        {/* <img 
           src={logo} 
           alt="Unveiled Echo Logo" 
           className="w-32 h-32 mx-auto mb-6 animate-float drop-shadow-[0_0_30px_rgba(79,209,197,0.6)] object-contain"
-        />
+        /> */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground drop-shadow-lg">
           Unveiled Echo{" "}
           <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-shimmer"

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/unveiled-echo-logo.jpg";
+import logo from "@/assets/logo-pdf-1.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,11 +46,11 @@ const Navigation = () => {
         isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
+
+      <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection("hero")}>
-            <img src={logo} alt="Unveiled Echo Logo" className="w-12 h-12 object-contain" />
-            <span className="text-xl font-bold text-foreground">Unveiled Echo</span>
+            <img src={logo} alt="Unveiled Echo Logo" className="align-middle w-96 h-96 p-8 object-contain" />
           </div>
 
           {/* Desktop Navigation */}
@@ -59,7 +59,7 @@ const Navigation = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors story-link"
+                className="font-medium text-foreground hover:text-primary transition-colors story-link text-lg"
               >
                 {link.label}
               </button>

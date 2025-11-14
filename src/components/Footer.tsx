@@ -1,4 +1,4 @@
-import logo from "@/assets/unveiled-echo-logo.jpg";
+import logo from "@/assets/logo-pdf-1.png";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
