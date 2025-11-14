@@ -1,4 +1,4 @@
-import { Heart, Users, Award } from "lucide-react";
+import { Heart, Users, Award, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Mission = () => {
@@ -13,7 +13,7 @@ const Mission = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           <Card className="border-2 hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_rgba(79,209,197,0.3)] hover:-translate-y-2 animate-fade-in group">
             <CardContent className="pt-6 text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_20px_rgba(79,209,197,0.4)] group-hover:shadow-[0_0_30px_rgba(79,209,197,0.6)] transition-all group-hover:scale-110 duration-300">
@@ -21,7 +21,7 @@ const Mission = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-3">Compassionate Care</h3>
               <p className="text-muted-foreground">
-                Our therapists provide empathetic, judgment-free support tailored to your unique journey.
+                With a deep respect for your stories, your struggles, and your strength, we believe that healing begins in a space where you feel seen, heard, and accepted exactly as you are.
               </p>
             </CardContent>
           </Card>
@@ -33,7 +33,7 @@ const Mission = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-3">Accessible Support</h3>
               <p className="text-muted-foreground">
-                Connect with licensed therapists anytime, anywhere. Therapy that fits your schedule and lifestyle.
+                Support should be easy to reach, no matter where you are. Through secure online sessions, you can connect with compassionate care from the comfort and privacy of your own space.
               </p>
             </CardContent>
           </Card>
@@ -45,7 +45,19 @@ const Mission = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-3">Professional Excellence</h3>
               <p className="text-muted-foreground">
-                All therapists are licensed, experienced professionals committed to your wellbeing and growth.
+                We are committed to providing high-quality, evidence-based care grounded in empathy, integrity, and professionalism. Our goal is to ensure every session is guided by practices that are tailored to your unique needs.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 hover:border-primary transition-all duration-300 hover:shadow-[0_0_40px_rgba(79,209,197,0.3)] hover:-translate-y-2 animate-fade-in group" style={{ animationDelay: "300ms" }}>
+            <CardContent className="pt-6 text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_20px_rgba(79,209,197,0.4)] group-hover:shadow-[0_0_30px_rgba(79,209,197,0.6)] transition-all group-hover:scale-110 duration-300">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-3">RCI + DPDP Compliant</h3>
+              <p className="text-muted-foreground">
+                Guided by the principles of ethical care and professional accountability, we adhere to RCI standards and fully comply with the DPDP Act. Your privacy, trust, and emotional safety are at the core of every session, ensuring a secure and respectful therapeutic experience.
               </p>
             </CardContent>
           </Card>
