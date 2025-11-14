@@ -35,7 +35,6 @@ const Navigation = () => {
     { label: "Mission", id: "mission" },
     { label: "Services", id: "services" },
     { label: "Therapists", id: "therapists" },
-    { label: "Testimonials", id: "testimonials" },
     { label: "FAQ", id: "faq" },
     { label: "Contact", id: "contact" },
   ];
