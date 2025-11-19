@@ -6,6 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { z } from "zod";
+import PrivacyPolicyDialog from "./PrivacyPolicyDialog";
+import { sendFormSubmissionEmail } from "@/services/emailService";
 
 const contactSchema = z.object({ 
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -22,19 +24,16 @@ const ContactForm = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+  const [pendingFormData, setPendingFormData] = useState(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
     try {
       const validatedData = contactSchema.parse(formData);
-      
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast.success("Thank you for reaching out! We'll get back to you within 24 hours.");
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setPendingFormData(validatedData);
+      setShowPrivacyPolicy(true);
     } catch (error) {
       if (error instanceof z.ZodError) {
         const firstError = error.errors[0];
@@ -42,6 +41,23 @@ const ContactForm = () => {
       } else {
         toast.error("Something went wrong. Please try again.");
       }
+    }
+  };
+
+  const handlePrivacyAgree = async () => {
+    setShowPrivacyPolicy(false);
+    setIsSubmitting(true);
+
+    try {
+      // Send email to owner
+      await sendFormSubmissionEmail(formData);
+      
+      toast.success("Thank you for reaching out! We'll get back to you within 24 hours.");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setPendingFormData(null);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Failed to submit form. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -141,6 +157,13 @@ const ContactForm = () => {
           </Card>
         </div>
       </div>
+
+      <PrivacyPolicyDialog
+        isOpen={showPrivacyPolicy}
+        onClose={() => setShowPrivacyPolicy(false)}
+        onAgree={handlePrivacyAgree}
+        showAgreeButton={true}
+      />
     </section>
   );
 };

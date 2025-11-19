@@ -1,5 +1,6 @@
 import logo from "@/assets/logo-pdf-1.png";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -22,7 +23,7 @@ const Footer = () => {
               <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Our Therapists</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">FAQ</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
           
