@@ -49,7 +49,6 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Submit only to Google Sheets
       const result = await submitToGoogleSheets(formData);
 
       if (result && result.success) {
