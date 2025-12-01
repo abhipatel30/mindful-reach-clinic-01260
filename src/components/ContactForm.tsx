@@ -16,7 +16,6 @@ const contactSchema = z.object({
   phone: z.string().trim().max(20, "Phone must be less than 20 characters").optional(),
   message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
 });
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
