@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { z } from "zod";
 import PrivacyPolicyDialog from "./PrivacyPolicyDialog";
-import { submitToGoogleSheets } from "@/services/sheetsService";
+import { Resend } from 'resend';
 
 const contactSchema = z.object({ 
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -34,6 +34,19 @@ const ContactForm = () => {
       const validatedData = contactSchema.parse(formData);
       setPendingFormData(validatedData);
       setShowPrivacyPolicy(true);
+
+
+
+    
+
+      const resend = new Resend('re_2x8drriS_EJHWB7k8zuyV8wJmPW1fiy7P');
+      resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: 'intakes@unveiledecho.com',
+        subject: 'Hello World',
+        html: '<p>Congrats on sending your <strong>first email</strong>!</p>'
+      });
+      
     } catch (error) {
       if (error instanceof z.ZodError) {
         const firstError = error.errors[0];
@@ -48,24 +61,18 @@ const ContactForm = () => {
     setShowPrivacyPolicy(false);
     setIsSubmitting(true);
 
-    try {
-      const result = await submitToGoogleSheets(formData);
-
-      if (result && result.success) {
-        toast.success("Thank you! Your submission has been saved to our records.");
-        setFormData({ name: "", email: "", phone: "", message: "" });
-        setPendingFormData(null);
-      } else {
-        const msg = (result && result.message) || 'Failed to save submission';
-        toast.error(msg);
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      const errorMsg = error instanceof Error ? error.message : "Failed to submit form";
-      toast.error(errorMsg || "Please check your connection and try again.");
-    } finally {
+    // Placeholder function to simulate submission
+    setTimeout(() => {
+      toast.success("Thank you for your message!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
       setIsSubmitting(false);
-    }
+      setPendingFormData(null);
+    }, 1000);
   };
 
   const handleChange = (
@@ -174,3 +181,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
