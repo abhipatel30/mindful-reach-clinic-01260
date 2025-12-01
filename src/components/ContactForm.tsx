@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 import PrivacyPolicyDialog from "./PrivacyPolicyDialog";
 import { Resend } from 'resend';
+import { log } from "console";
 
 const contactSchema = z.object({ 
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -38,7 +39,7 @@ const ContactForm = () => {
 
 
     
-
+      console.log("****",formData,'****',validatedData);      
       const resend = new Resend('re_2x8drriS_EJHWB7k8zuyV8wJmPW1fiy7P');
       resend.emails.send({
         from: 'onboarding@resend.dev',
